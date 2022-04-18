@@ -9,6 +9,7 @@ public class MarkdownParse {
 
     public static ArrayList<String> getLinks(String markdown) {
         char exc = '!';
+        char par = '(';
         ArrayList<String> toReturn = new ArrayList<>();
         // find the next [, then find the ], then find the (, then read link upto next )
         int currentIndex = 0;
@@ -25,12 +26,18 @@ public class MarkdownParse {
             if (openParen == -1){
                 break;
             }
-            int closeParen = markdown.indexOf(")", openParen);
-            if (closeParen == -1){
-                break;
+            int closeParen;
+            if (closeBracket + 1 == openParen){
+                closeParen = markdown.indexOf(")", openParen);
+                if (closeParen == -1){
+                    break;
+                }
+                if (openBracket == 0 ||markdown.charAt(openBracket-1)!= exc){
+                    toReturn.add(markdown.substring(openParen + 1, closeParen));
+                }
             }
-            if (openBracket == 0 ||markdown.charAt(openBracket-1)!= exc){
-                toReturn.add(markdown.substring(openParen + 1, closeParen));
+            else{
+                closeParen = openParen;
             }
             currentIndex = closeParen + 1;
             // System.out.println("updated" + currentIndex);
