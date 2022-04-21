@@ -13,7 +13,7 @@ public class MarkdownParse {
         ArrayList<String> toReturn = new ArrayList<>();
         // find the next [, then find the ], then find the (, then read link upto next )
         int currentIndex = 0;
-        System.out.println("eyo my dude this is something");
+        //System.out.println("eyo my dude this is something");
         while(currentIndex < markdown.length()) {
             int openBracket = markdown.indexOf("[", currentIndex);
             if (openBracket == -1){
