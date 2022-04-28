@@ -80,7 +80,7 @@ public class MarkdownParseTest {
     @Test
     public void test9() throws IOException
     {
-        assertEquals(List.of("a link on the first lin"), MarkdownParse.getLinks(Files.readString(Paths.get("test-file8.md"))));
+        assertEquals(List.of("a link on the first lin", ""), MarkdownParse.getLinks(Files.readString(Paths.get("test-file2.md"))));
     }
     
 }
