@@ -83,6 +83,11 @@ public class MarkdownParseTest {
         assertEquals(List.of("a link on the first line"), MarkdownParse.getLinks(Files.readString(Paths.get("test-file8.md"))));
     }
     
+    @Test
+    public void newFail10() throws IOException
+    {
+        assertEquals(List.of("iamalink.com", "ishouldexist.com"), MarkdownParse.getLinks(Files.readString(Paths.get("newFail.md"))));
+    }
 }
 //javac -cp ".;lib\junit-4.13.2.jar;lib\hamcrest-core-1.3.jar" MarkdownParseTest.java
 //java -cp ".;lib\junit-4.13.2.jar;lib\hamcrest-core-1.3.jar" org.junit.runner.JUnitCore MarkdownParseTest
