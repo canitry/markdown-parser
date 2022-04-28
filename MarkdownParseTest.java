@@ -86,7 +86,7 @@ public class MarkdownParseTest {
     @Test
     public void newFail10() throws IOException
     {
-        assertEquals(List.of("iamalink.com", "ishouldexist.com"), MarkdownParse.getLinks(Files.readString(Paths.get("newFail.md"))));
+        assertEquals(List.of("(((((9)))))"), MarkdownParse.getLinks(Files.readString(Paths.get("newFail.md"))));
     }
 }
 //javac -cp ".;lib\junit-4.13.2.jar;lib\hamcrest-core-1.3.jar" MarkdownParseTest.java
