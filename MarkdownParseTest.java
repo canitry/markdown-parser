@@ -86,8 +86,8 @@ public class MarkdownParseTest {
     @Test
     public void newFail10() throws IOException
     {
-        assertEquals(List.of("(((((9)))))"), MarkdownParse.getLinks(Files.readString(Paths.get("newFail.md"))));
+        assertEquals(List.of("(((((9)))))", "hellotherewhatisyourname"), MarkdownParse.getLinks(Files.readString(Paths.get("newFail.md"))));
     }
 }
-//javac -cp ".;lib\junit-4.13.2.jar;lib\hamcrest-core-1.3.jar" MarkdownParseTest.java
+//javac -cp ".;lib\junit-4.13.2.jar;lib\hamcrest-core-1.3.jar" MarkdownParseTest.java 0,25,26,38
 //java -cp ".;lib\junit-4.13.2.jar;lib\hamcrest-core-1.3.jar" org.junit.runner.JUnitCore MarkdownParseTest
