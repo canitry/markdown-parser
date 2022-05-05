@@ -15,7 +15,7 @@ public class MarkdownParse {
     }
 
     static String innerParen(String markdown, int openParen, int closeParen, int trueOpen){
-        System.out.println(markdown + trueOpen + closeParen);
+        //System.out.println(markdown + trueOpen + closeParen);
         int innerparen = markdown.substring(openParen+1, closeParen).indexOf("(");
         if (innerparen == -1){
             // toReturn.add(markdown.substring(openParen+1, closeParen));
@@ -26,7 +26,7 @@ public class MarkdownParse {
             while (innerparen != -1){
                 innerparen = innerparen + 1 + openParen;
                 int prevcloseParen = closeParen;
-                System.out.println(closeParen + "hiro");
+                //System.out.println(closeParen + "hiro");
                 closeParen = markdown.substring(closeParen+1).indexOf(")");
                 if (closeParen != -1){
                     closeParen += prevcloseParen + 1;
