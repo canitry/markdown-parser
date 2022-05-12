@@ -15,10 +15,12 @@ public class MarkdownParse {
     }
 
     static String innerParen(String markdown, int openParen, int closeParen, int trueOpen){
+        //print statement for testing
         //System.out.println(markdown + trueOpen + closeParen);
         int innerparen = markdown.substring(openParen+1, closeParen).indexOf("(");
         if (innerparen == -1){
             // toReturn.add(markdown.substring(openParen+1, closeParen));
+            //print statement for testing
 //            System.out.println(markdown + trueOpen + "close: " + closeParen);
             return markdown.substring(trueOpen+1, closeParen);
         }
@@ -30,6 +32,7 @@ public class MarkdownParse {
                 closeParen = markdown.substring(closeParen+1).indexOf(")");
                 if (closeParen != -1){
                     closeParen += prevcloseParen + 1;
+                    //print statement for testing
 //                    System.out.println(closeParen+"readded");
                     return innerParen(markdown, innerparen, closeParen, trueOpen);
                 }
@@ -48,7 +51,7 @@ public class MarkdownParse {
             if (openBracket == 0 || markdown.charAt(openBracket-1) != exc){
                 int closeParen = markdown.indexOf(")", openParen);
                 if (closeParen != -1){
-                    
+                    //print statement for testing
 //                    System.out.println(markdown + "  hri close paren  " +closeParen + "   open paren + 1  "+ openParen);
                     return innerParen(markdown, openParen, closeParen, openParen);
                 }else{
@@ -89,6 +92,7 @@ public class MarkdownParse {
             }
         }
         return toReturn;
+        //previously used code:
                 // boolean mainobpresent = false;
         // int obpresent = 0;
         // boolean mainoppresent = false;
