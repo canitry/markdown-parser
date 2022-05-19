@@ -61,6 +61,7 @@ public class MarkdownParse {
         }
         else{
             while (innerBracket != -1){
+                innerBracket = openBracket + innerBracket;//added to fix errors for lab report 4 from stupid mistake.
                 openBracket = markdown.substring(0,openBracket).lastIndexOf("[");
                 if (openBracket != -1){
                     return innerBracket(markdown, openBracket, innerBracket, openParen);
